@@ -7,10 +7,15 @@ if ($line =~/^#!/ && $. == 1) {
 #print $line;
 } elsif ($line =~ /^\s*print\s*"(.*)"\s*$/) {
 print "print \"$1\\n\";\n";
+ 		
+    }elsif($line =~ s/$/\;/ && $line=~ s/answer/\$answer/g){
+print "$line";
      } elsif($line =~m/hello world/){
                 print  "$line", "\n";
-    }elsif($line =~ s/^/\$/g && $line =~ s/$/\;/){
-	print "$line";
+    }elsif($line=~s/answer/\$answer/g){
+     		print "$line";
+     }elsif($line=~s/factor/\$factor/g){
+     		print "$line";
      }elsif($line =~ m/\+/){
 	 print "$line\n";	
 	}elsif($line=~m/\-/){
@@ -20,8 +25,6 @@ print "print \"$1\\n\";\n";
         }elsif($line=~m/\//){
         	print "$line";
  	}elsif($line=~m/\%/){
-		print "$line";
-	}elsif($line=m/\**/){
 		print "$line";
         }elsif($line=~m/\>/){
         	print "$line";
@@ -42,6 +45,7 @@ print "print \"$1\\n\";\n";
         }elsif($line=~m/\^/){
 		print "$line\n";        
         }else{
-               print "match not found\n";
+               print "matchnotdofund\n";
 	}
+	
 }
