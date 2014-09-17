@@ -1,51 +1,30 @@
 #!/usr/local/bin/perl -w
+
 while($line=<>){
+$blank = 0;
+chomp($line);
 if ($line =~/^#!/ && $. == 1) {
-		print "#!/usr/bin/perl -w\n";
+		$line =  "#!/usr/bin/perl -w";
 } elsif ($line =~ /^\s*#/ || $line =~ /^\s*$/) {
 #Blank & comment lines can be passed unchanged
-#print $line;
-} elsif ($line =~ /^\s*print\s*"(.*)"\s*$/) {
-print "print \"$1\\n\";\n";
- 		
-    }elsif($line =~ s/$/\;/ && $line=~ s/answer/\$answer/g){
-print "$line";
-     } elsif($line =~m/hello world/){
-                print  "$line", "\n";
-    }elsif($line=~s/answer/\$answer/g){
-     		print "$line";
-     }elsif($line=~s/factor/\$factor/g){
-     		print "$line";
-     }elsif($line =~ m/\+/){
-	 print "$line\n";	
-	}elsif($line=~m/\-/){
+print $line;
+$blank = 1;
+} elsif ($line =~ /^\s*print\s*"?(.*)"?\s*$/) {
+$line .= ";";
+$line =~ s/;/\,"\\n\";/;
+				
+    }elsif($line =~m/hello world/){
+                $line =~ s/;/,\"\\n\";/;
 		print "$line";
-	}elsif($line=~m/\*/){
-		print "$line";
-        }elsif($line=~m/\//){
-        	print "$line";
- 	}elsif($line=~m/\%/){
-		print "$line";
-        }elsif($line=~m/\>/){
-        	print "$line";
-        }elsif($line=~m/\</){
-        	print "$line";;
-        }elsif($line=~m/\!=/){
-        	print "$line";
-        }elsif($line=~m/\==/){
-        	print"$line";
-        }elsif($line=~m/\<>/){
-        	print "$line";
-        }elsif($line=~m/\>=/){
-        	print "$line";
-	}elsif($line=~m/\<=/){
-		print "$line";
-        }elsif($line=~m/\|/){
-		print "$line";
-        }elsif($line=~m/\^/){
-		print "$line\n";        
-        }else{
-               print "matchnotdofund\n";
-	}
+    }elsif($line=~s/factor/\$factor/g){
+     	 print "$line";	
+}
+
+	$line =~ s/answer/\$answer/;	
 	
+	if($line =~ /([0-9])|(\")$/){
+		print "$line;\n";
+	}elsif($blank != 1){
+		print "$line\n";
+	}
 }
