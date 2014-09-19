@@ -17,14 +17,23 @@ $line =~ s/;/\,"\\n\";/;
                 $line =~ s/;/,\"\\n\";/;
 		print "$line";
     }elsif($line=~s/factor/\$factor/g){
-     	 print "$line";	
+	#print $line =~ s/;/\,"\\n\";/;
 }
 
 	$line =~ s/answer/\$answer/;	
 	
+	#print $line;
 	if($line =~ /([0-9])|(\")$/){
 		print "$line;\n";
+	;
+	}elsif ($line=~s/if /if(/g){
+		print "$line;\n";
+	
 	}elsif($blank != 1){
 		print "$line\n";
+	}else{
+		print "#$line\n";
 	}
+	
+		
 }
