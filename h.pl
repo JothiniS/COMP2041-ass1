@@ -1,4 +1,3 @@
-match not found
-match not found
-print "hello world"
+#!/usr/bin/perl -w
 
+print "hello world\n";

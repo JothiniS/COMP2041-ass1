@@ -1,29 +1,52 @@
-#!/usr/bin/perl
-# Starting point for COMP2041/9041 assignment 
-# http://www.cse.unsw.edu.au/~cs2041/assignments/python2perl
-# written by andrewt@cse.unsw.edu.au September 2014
+#!/usr/local/bin/perl -w
 
-while ($line = <>) {
-	if ($line =~ /^#!/ && $. == 1) {
+while($line=<>){
+$blank = 0;
+chomp($line);
+if ($line =~/^#!/ && $. == 1) {
+		$line =  "#!/usr/bin/perl -w";
+} elsif ($line =~ /^\s*#/ || $line =~ /^\s*$/) {
+#Blank & comment lines can be passed unchanged
+#print $line;
+$blank = 1;
+} elsif ($line =~ /^\s*print\s*"?(.*)"?\s*$/) {
+$line .= ";";
+$line =~ s/;/\,"\\n\";/;
+				
+    }elsif($line =~m/hello world/){
+                $line =~ s/;/,\"\\n\";/;
+		print "$line";
+    }elsif($line =~s/factor/\$factor/g){
+	#print $line =~ s/;/\,"\\n\";/;
+}
+#	$line =~ s/factor/\$factor/;
+#elsif($line =~s/answer/\$answer/g&& $line =~ s/if answer/if\(\answer/g &&$line=~ s/\:/\)/g ){
+#}elsif( $line=~s/answer/\$answer/){
+  $line =~ s/answer/\$answer/; 
+if($line =~ s/ answer/\$answer/g &&  $line=~ s/\:/\)/g && $line =~ s/if /if\(/g && $line=~ s/\)/\)\{/g && $line =~/\;$/){
+}elsif($line=~/\;$/){
+#		print "}\n";
+#
+}elsif($line=~s/while /while\(/g && $line=~s/\)/\)\{/g && $line=~/\;$/){
+	print"}\n";
+}   
+
+#	if($line =~ s/if answer/if\(\$answer/){
+#	}	 	
+#	print $line;
+ 
+ 	if($line =~ /([0-9])|(\")$/){
+		print "$line;\n";
 	
-		# translate #! line 
-		
-		print "#!/usr/bin/perl -w\n";
-	} elsif ($line =~ /^\s*#/ || $line =~ /^\s*$/) {
+#	}elsif ($line=~s/if answer/if \(\$answer/){
+#		print "$line\n";
 	
-		# Blank & comment lines can be passed unchanged
-		
-		print $line;
-	} elsif ($line =~ /^\s*print\s*"(.*)"\s*$/) {
-	
-		# Python's print print a new-line character by default
-		# so we need to add it explicitly to the Perl print statement
-		
-		print "print \"$1\\n\";\n";
-	} else {
-	
-		# Lines we can't translate are turned into comments
-		
-		print "#$line\n";
+	}elsif($blank != 1){
+		print "$line\n";
+
+	}else{
+#		print "#$line\n";
 	}
+	
+		
 }
