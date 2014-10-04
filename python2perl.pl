@@ -79,7 +79,7 @@ if( $line=~ /^if/ &&  $line =~ /\:/ ) {
 
 }elsif($line=~/else/ && $line=~/\:/){
 $line=~s/else\:/\}else\{/g;
-while(<>){
+while($line=<>){
 	if (eof){	
 	print "}\n";
 	}else{
