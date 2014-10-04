@@ -1,0 +1,21 @@
+Diary By Jothini Sivananthan
+Sunday 14 September
+Today I Started some brief coding with code that has regex to match simple operators but realised that it’s not required as Perl and python have same syntax for basic operations  such as + , -, *, % .
+Monday 15 September
+Today I set up my git repository to store all my files including the test files as well as my main program.
+Tuesday 16 September
+Today I Did some reading on Perl regex for matching Meta characters and searched the convention of how to write it in Perl online and used it to match and replace semicolons at the end of the line with curly brackets
+Wednesday 17th September
+Today I Worked on Subset 0 and Subset 1. For subset 1 I implemented an array to store the variables as a way to keep track of the variables. Also I created a regex to match the words for variable names.
+Thursday 18th September
+Today I Got subset 0 and 1 working by sample testing of the code with the sample tests provided for subset 0 and subset 1 which included programs answer0.py and answer1.py
+Friday 19th September
+Today I Worked on subset 2 and inserted the curved brackets for the if statements and the curly braces at the end of the if statements as well. I also Implemented the while statements with the curved brackets and curly braces at the end of the while statement.
+Saturday 20 September
+Today I Worked more on subset 2 by trying to insert the curly braces to close the if statements. This was also successfully done for the while loops. I also got the test programs provided on the course website including answer5.py and answer6.py to translate successfully into Perl.
+Tuesday 22 September
+Today I Created test files for subset 0 and 1 for the final submission. I also looked on the internet to create sample Perl and python programs that I could use to test my program.
+Tuesday 30 September
+Today I Worked on the else statements and some of the logical operators. The logical operators and and or were a bit difficult as they have different meanings in Perl and Python. I also worked on the translation of continue statements to next statements.
+Friday October 3rd
+Today I cleaned up the code of my program by removing unnecessary comments and fixing up the indentation.  I also worked on the break statements and translating them into last statements.
