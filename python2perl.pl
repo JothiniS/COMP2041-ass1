@@ -20,12 +20,7 @@ $line =~ s/;/\,"\\n\";/;
 		print "$line";
     }elsif($line =~ /print/){
      $line.=",\"\\n\"";
-#    }elsif($line =~s/factor/\$factor/g){
-#	print $line =~ s/;/\,"\\n\";/;
-#	print $line;
 
-#$line=~s/^\ *[a-zA-Z_0-9]*\ *=/^\ *\$[a-zA-Z_0-9]*\ *=/g;
-     # print "$line";
 }elsif($line=~ /^\ *[a-zA-Z].*\ *=/){
 $line=~ s/\s*//g;
 $line .= ";";
@@ -38,9 +33,7 @@ while($i<=$#words){
 	$line=~s/$words[$i]/\$$words[$i]/g;
  	$i++;
 }
-#$line=~s/var1/\$var1/g;
-# $line =~ s/answer/\$answer/;
-#$line=~ s/factor/\$factor/g; 
+ 
 
 if( $line=~ /^if/ &&  $line =~ /\:/ ) { 
 	$line =~ s/if/if\(/g;
