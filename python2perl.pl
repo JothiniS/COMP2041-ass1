@@ -38,37 +38,21 @@ while($i<=$#words){
 if( $line=~ /^if/ &&  $line =~ /\:/ ) { 
 	$line =~ s/if/if\(/g;
 	$line=~s/$\:/\)/g;
-#	$line=~ s/break/break\;/g;
-#	if($line=~/break\;/){
-#		print "}\n";
-#	}
+
 		
 	$line=~ s/\)/\)\{/g;
-	#if($line=~/if$/ && $line=~/\d/){
-#	$line=~ s/break/break\;/g;
-#	print "}\n";
-#	$line=~s/$\;/}/g;
+	
 	
 	$line=~ s/$/\;\}/g;
 
 	
-#	$line=~m/continue/;
-#	$line=~s/continue/next/g;
-#	print "next\n";
-	#$line=~s/import sys//g;
+	$line=~m/continue/;
+	$line=~s/continue/next/g;
+
 	
-		
-#$line=~/break/;
-#$line=~s/break//g;
-#}elsif($line=~/^if/ && $line=~/\:/){
-#	$line=~s/if/if\(/g;
-#	$line=~s/$\:/\)/g;
-#	$line=~s/\)/\)\{/g;
-#	$line=~s/continue/next/g;
-#	print "}\n";
-
-
-#print"last\;\n\}\n";
+	$line=~/break/;
+	$line=~s/break//g;
+#print "}\n";		
 
 }elsif($line=~/else/ && $line=~/\:/){
 $line=~s/else\:/\}else\{/g;
@@ -95,8 +79,7 @@ $line=~s/\:/\)/g;
 $line=~s/\)/\)\{/g ;
 
 $line=~ s/$/\;\}/g;
-#$line=~s/import sys//g;
-#$line=~s/sys\./stdout\./write\("/> \"\)/print "> "/g;
+
 }elsif($line=~ /^while/ && $line=~ /\:/ && $line=~/print/){
 $line=~s/\:/\)/g;
 
@@ -105,26 +88,22 @@ print"\n";
 $line=~ s/$/\;\}/g;
 
 
-#}elsif($line=~/break/){
-#$line=~s/break/break\;/g;
-
 
 }elsif($line=~/^for/ && $line=~/\:/){
 	$line=~s/in range/ /g;
-	$line=~s/$\:/\)/g;
-#	$line=~s/\(/\d\,/\d\(/\d\./\./\d/g; 
+	$line=~s/\(\,\ /\(\,\.\./g;
+	$line=~s/$\:/\)\{/g; 
 }
  	if($line =~ /([0-9])|(\")$/){
 		print "$line;\n";
 	
-#	}elsif ($line=~s/if answer/if \(\$answer/){
-#		print "$line\n";
+
 	
 	}elsif($blank != 1){
 		print "$line\n";
-#
+
 	}else{
-#		print "#$line\n";
+		print "#$line\n";
 	}
 	
 		

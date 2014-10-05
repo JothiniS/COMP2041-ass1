@@ -19,3 +19,7 @@ Tuesday 30 September
 Today I Worked on the else statements and some of the logical operators. The logical operators and and or were a bit difficult as they have different meanings in Perl and Python. I also worked on the translation of continue statements to next statements.
 Friday October 3rd
 Today I cleaned up the code of my program by removing unnecessary comments and fixing up the indentation.  I also worked on the break statements and translating them into last statements.
+Saturday October 4th
+Today I worked on the break and continue translations . I also put my test files into my git and did some simple testing on my main program.
+Sunday October 5th
+Today I cleaned up my code by removing unecessary code that was commented and fixed up the style of my code 
