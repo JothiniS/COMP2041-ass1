@@ -1,13 +1,12 @@
-
-#!/usr/local/bin/perl
+#!/usr/bin/perl -w  
 #By Jothini Sivananthan
 
-while($line=<>) {
+while($line=<>){
 $blank = 0;
 chomp($line);
-if ($line =~/^#!/ && $. == 1){
+if ($line =~ /^#!/ && $. == 1){
 $line="#\!/usr/bin/perl -w"; 
-} elsif ($line =~ /^\s*#/ || $line =~ /^\s*$/){
+}elsif ($line =~ /^\s*#/ || $line =~ /^\s*$/){
 #Blank & comment lines can be passed unchanged
 #print $line;
 	$blank = 1;
@@ -56,13 +55,13 @@ if( $line=~ /^if/ &&  $line =~ /\:/ ) {
 #regex to match else statements
 }elsif($line=~/else/ && $line=~/\:/){
 $line=~s/else\:/\}else\{/g;
-while($line=<>){
-	if (eof){	
-	print "}\n";
-	}else{
-	 exit 1;
-}
-}
+#while($line=<>){
+#	if (eof){	
+#	print "}\n";
+#	}else{
+#	 exit 1;
+#}
+#}
 
 }elsif($line=~/break/){
 $line=~s/break//g;

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-solution = 45
-if solution > 0: solution = solution + 2
-if solution == 47: solution = solution - 5
-print solution
+number1 = 10
+number2 = 3
+answer = number1 + number2
+print answer
