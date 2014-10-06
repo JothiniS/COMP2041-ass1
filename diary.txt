@@ -23,3 +23,5 @@ Saturday October 4th
 Today I worked on the break and continue translations . I also put my test files into my git and did some simple testing on my main program.
 Sunday October 5th
 Today I cleaned up my code by removing unecessary code that was commented and fixed up the style of my code 
+Monday October 6th
+Final touch ups to the main program , cleaning up the code , making sure test fies are working as well as the sample ones provided on the course home page.
