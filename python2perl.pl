@@ -34,7 +34,7 @@ while($i<=$#words){
  	$i++;
 }
  
-#regex to match  if statments 
+#regex to match if statments 
 if( $line=~ /^if/ &&  $line =~ /\:/ ) { 
 	$line =~ s/if/if\(/g;
 	$line=~s/$\:/\)/g;
