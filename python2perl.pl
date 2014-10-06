@@ -20,7 +20,7 @@ $line =~ s/;/\,"\\n\";/;
 		print "$line";
     }elsif($line =~ /print/){
      $line.=",\"\\n\"";
-
+#storing variables
 }elsif($line=~ /^\ *[a-zA-Z].*\ *=/){
 $line=~ s/\s*//g;
 $line .= ";";
