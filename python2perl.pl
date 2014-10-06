@@ -66,10 +66,7 @@ while($line=<>){
 
 }elsif($line=~/break/){
 $line=~s/break//g;
-#	$line=~s/last/last\;/g;
-#	if($line=~last\;){
-#	print "}\n";
-#	}
+
 	print "last\;\n\}\n";
 #	print "\}\n";
 }elsif($line=~ /^while/ && $line=~ /\:/){
