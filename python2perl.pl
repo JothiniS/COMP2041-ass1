@@ -41,13 +41,10 @@ if( $line=~ /^if/ &&  $line =~ /\:/ ) {
 		
 	$line=~ s/\)/\)\{/g;
 	
-	
 	$line=~ s/$/\;\}/g;
-
 	
 	$line=~m/continue/;
 	$line=~s/continue/next/g;
-
 	
 	$line=~/break/;
 	$line=~s/break//g;
