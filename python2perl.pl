@@ -52,7 +52,7 @@ if( $line=~ /^if/ &&  $line =~ /\:/ ) {
 	
 	$line=~/break/;
 	$line=~s/break//g;
-#print "}\n";		
+	#print "}\n";		
 #regex to match else statements
 }elsif($line=~/else/ && $line=~/\:/){
 $line=~s/else\:/\}else\{/g;
