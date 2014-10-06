@@ -34,7 +34,7 @@ while($i<=$#words){
  	$i++;
 }
  
-
+#regex to match  if statments 
 if( $line=~ /^if/ &&  $line =~ /\:/ ) { 
 	$line =~ s/if/if\(/g;
 	$line=~s/$\:/\)/g;
@@ -53,7 +53,7 @@ if( $line=~ /^if/ &&  $line =~ /\:/ ) {
 	$line=~/break/;
 	$line=~s/break//g;
 #print "}\n";		
-
+#regex to match else statements
 }elsif($line=~/else/ && $line=~/\:/){
 $line=~s/else\:/\}else\{/g;
 while($line=<>){
@@ -69,6 +69,7 @@ $line=~s/break//g;
 
 	print "last\;\n\}\n";
 #	print "\}\n";
+#regex to match while statements
 }elsif($line=~ /^while/ && $line=~ /\:/){
 $line=~s/while/while\(/g ;
 $line=~s/\:/\)/g;
@@ -85,7 +86,7 @@ print"\n";
 $line=~ s/$/\;\}/g;
 
 
-
+#regex to match for loops
 }elsif($line=~/^for/ && $line=~/\:/){
 	$line=~s/in range/ /g;
 	$line=~s/\(\,\ /\(\,\.\./g;
