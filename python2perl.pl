@@ -2,7 +2,7 @@
 #!/usr/local/bin/perl
 #By Jothini Sivananthan
 
-while($line=<>){
+while($line=<>) {
 $blank = 0;
 chomp($line);
 if ($line =~/^#!/ && $. == 1){
