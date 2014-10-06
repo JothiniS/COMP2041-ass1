@@ -2,8 +2,6 @@
 
 a = 10
 b = 20
-
-
 if  a and b :
    print "Line 1 - a and b are true"
 else:
